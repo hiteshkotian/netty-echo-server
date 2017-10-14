@@ -12,8 +12,17 @@ import io.netty.channel.embedded.EmbeddedChannel;
 import io.netty.util.CharsetUtil;
 import junit.framework.Assert;
 
+/**
+ * Unit test for {@linkplain EchoServerHandler} channel handler.
+ * 
+ * @author hckotian
+ *
+ */
 public class EchoServerHandlerTest {
 	
+	/**
+	 * Check if the echo server handler will return the test string as is without any case change.
+	 */
 	@Test
 	public void testEchoServerHandlerResponse () {
 		String testString = "This is a test string";
@@ -29,6 +38,10 @@ public class EchoServerHandlerTest {
 		ch.finish();
 	}
 	
+	/**
+	 * Check if the echo server handler will return an error message when supplied with an empty string
+	 * as input.
+	 */
 	@Test
 	public void testEchoServerHandlerForNull () {
 		String testString = "";
